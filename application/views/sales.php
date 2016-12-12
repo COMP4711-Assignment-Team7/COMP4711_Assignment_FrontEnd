@@ -1,22 +1,25 @@
 <form>
     <body class="SalesBody">
-        <h1>Item List</h2>
+        <h2>Item List</h2>
         <p>Input the amount of items</p> 
+        <hr>
         {sales}        
         {supplies}
-        <div class="list-group" id="buttongroup">
+        <div class="listgroup" id="buttongroup">
             <ul>
                 <div class="col-xs-4 title">
-                    <a href="{link}">{supply}</a>
-                    <input class="form-control" id="focusedInput" type="text" placeholder="Click to set" autocomplete="off">
+                    <a href="{link}" class="name">{supply}</a>
+                    <input id="focusedInput" class="form-control" type="number" min="0" placeholder="Enter Value" autocomplete="off">
                 </div>
-                    <input type="text" class="col-xs-2 price" value="${price}" onfocus="this.blur()"></input>
-                    <input type="text" class="col-xs-8 desc" value="{description}" onfocus="this.blur()"></input>
+                <div class="list-group">
+                    <a type="text" class="list-group-item" value="${price}" onfocus="this.blur()">${price}</a>
+                    <a type="text" class="list-group-item" value="{description}" onfocus="this.blur()">{description}</a>
+                </div>
                 <br/><br/><br/><br/>
             </ul>
         </div>
          {/supplies}
          {/sales}
-         <button type="submit" class="btn btn-default">Submit</button>
+         <button type="submit" class="btn btn-primary pull-right">Submit</button>
     </body>
 </form>
